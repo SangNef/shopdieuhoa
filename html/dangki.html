@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dangNhap.css">
+    <link rel="stylesheet" href="../css/dangki.css">
+
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+<body>
+    <div class="dang-nhap">
+        <div class="wrapper">
+            <div class="header">
+                <div class="logo col-12">
+                    <i class="fa-regular fa-handshake"></i>
+                    <a href="#">UyTin</a>
+                </div>
+            </div>
+            <div class="form-dn">
+                <h2>Đăng kí vào UyTin.com</h2>
+                <form id="register-form">
+                    <div class="form-group">
+                        <label for="new-username" class="w-100">Tên đăng nhập</label>
+                        <input type="text" name="new-username" class="w-100" id="new-username" placeholder="nguyenvana123" required>
+                        <small id="username-error" class="text-danger"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="new-password" class="w-100">Mật khẩu</label>
+                        <input type="password" class="w-100" name="new-password" id="new-password" required>
+                        <small id="password-error" class="text-danger"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password" class="w-100">Nhập lại mật khẩu</label>
+                        <input type="password" class="w-100" name="confirm-password" id="confirm-password" required>
+                        <small id="confirm-password-error" class="text-danger"></small>
+                    </div>
+
+                    <div class="form-group w-100 row" style="justify-content: center; align-self: center;">
+                        <button type="submit" class="w-100 btn">Đăng kí</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="/js/user.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+          $("#register-form").submit(function (e) {
+            e.preventDefault();
+            
+            let newUsername = $("#new-username").val();
+            let newPassword = $("#new-password").val();
+            let confirmPassword = $("#confirm-password").val();
+      
+            if (newPassword !== confirmPassword) {
+              $("#confirm-password-error").text("Mật khẩu xác nhận không khớp!");
+              return;
+            }
+      
+            let existingUser = users.find((user) => user.username === newUsername);
+      
+            if (existingUser) {
+              $("#username-error").text("Tên đăng nhập đã tồn tại!");
+              $("#password-error").text("");
+              return;
+            }
+      
+            addUser(newUsername, newPassword);
+            console.log(newUsername, newPassword);
+            $("#username-error").text("");
+            $("#password-error").text("");
+            $("#confirm-password-error").text("");
+            $("#register-form")[0].reset();
+            console.log(users);
+            window.location.href = "index.html";
+          });
+        });
+      </script>      
+</body>
+</html>

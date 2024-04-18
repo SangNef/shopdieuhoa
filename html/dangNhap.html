@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dangNhap.css">
+
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+<body>
+    <div class="dang-nhap">
+        <div class="wrapper">
+            <div class="header">
+                <div class="logo col-12">
+                    <i class="fa-regular fa-handshake"></i>
+                    <a href="#">UyTin</a>
+                </div>
+            </div>
+            <div class="form-dn">
+                <h2>Đăng nhập vào UyTin.com</h2>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="username" class="w-100">Tài khoản</label>
+                        <input type="text" name="username" class="w-100" id="username" placeholder="nguyenvana123@gmail.com" required />
+                        <small id="username-error" class="text-danger"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="w-100">Mật khẩu</label>
+                        <input type="password" class="w-100" name="password" id="password" required />
+                        <small id="password-error" class="text-danger"></small>
+                    </div>
+
+                    <div class="form-group w-100 row" style="justify-content: center; align-self: center;">
+                        <button type="submit" class="w-100 btn">Đăng nhập</button>
+                        <span>Nếu bạn chưa có tài khoản hãy click </span>
+                        <a style="margin-left: 5px;" href="../html/dangki.html">Đăng kí</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="/js/user.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#login-form").submit(function (e) {
+          e.preventDefault();
+          let username = $("#username").val();
+          let password = $("#password").val();
+          console.log(username, password)
+
+          let user = login(username, password);
+
+          if (user instanceof Array && user.length > 0) {
+            $("#username-error").text(user[0]);
+            $("#password-error").text("");
+          } else {
+            $("#username-error").text("");
+            $("#password-error").text("");
+            window.location.href = "index.html";
+          }
+        });
+      });
+      $("#username").keyup(function () {
+        $("#username-error").text("");
+      });
+
+      $("#password").keyup(function () {
+        $("#password-error").text("");
+      });
+    </script>
+
+</body>
+</html>

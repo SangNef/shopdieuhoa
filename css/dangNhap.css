@@ -1,0 +1,75 @@
+
+/* dang nhap */
+.dang-nhap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    /* color: white; */
+    background-image: linear-gradient(to bottom, var(--color-pink), var(--color-main));
+}
+
+.wrapper{
+    background-color: #fff;
+    width: 500px;
+    height: 500px;
+    border-radius: 20px;
+    /* overflow: hidden; */
+    position: relative;
+}
+.wrapper .header{
+    text-align: center;
+    background-color: var(--color-main);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: calc(50% - 50px);
+    top: -50px;
+    margin-bottom: 30px;
+}
+.wrapper .form-dn{
+    position: absolute;
+    top: 80px;
+    width: 100%;
+    
+}
+
+.wrapper .form-dn h2{
+    text-align: center;
+    font-weight: 700;
+    color: var(--color-main);
+}
+
+.wrapper .form-dn h2::after{
+    content: "mang đến làn gió mát";
+    font-weight: 400;
+    display: block;
+    font-size: 15px;
+    color: #1D66BA;
+    margin-bottom: 30px;
+}
+
+.wrapper .form-dn form{
+    margin: 0px 20px;
+}
+.wrapper .form-dn form .form-group label{
+    text-indent: 10px;
+    font-weight: 500;
+    font-size: 18px;
+
+}
+.wrapper .form-dn form .form-group input{
+    border-radius: 30px;
+    text-indent: 10px;
+
+    padding: 5px;
+}
+
+.wrapper .form-dn form .form-group .btn{
+    margin-top: 30px;
+    border-radius: 20px;
+}
+
+
