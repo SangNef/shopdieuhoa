@@ -69,11 +69,11 @@
                 </div>
                 <div class="col-9">
                     <ul class="nav navbar-nav navbar-expand menu-2 w-100">
-                        <li class="nav-item"><a href="/html/index.html" class="nav-link">TRANG CHỦ</a></li>
-                        <li class="nav-item"><a href="/html/may-lanh.html" class="nav-link">MÁY LẠNH</a></li>
-                        <li class="nav-item"><a href="/html/dich-vu.html" class="nav-link">DỊCH VỤ</a></li>
-                        <li class="nav-item"><a href="/html/bao-hanh.html" class="nav-link">BẢO HÀNH</a></li>
-                        <li class="nav-item"><a href="/html/lien-he.html" class="nav-link">LIÊN HỆ</a></li>
+                        <li class="nav-item"><a href="../html/index.html" class="nav-link">TRANG CHỦ</a></li>
+                        <li class="nav-item"><a href="../html/may-lanh.html" class="nav-link">MÁY LẠNH</a></li>
+                        <li class="nav-item"><a href="../html/dich-vu.html" class="nav-link">DỊCH VỤ</a></li>
+                        <li class="nav-item"><a href="../html/bao-hanh.html" class="nav-link">BẢO HÀNH</a></li>
+                        <li class="nav-item"><a href="../html/lien-he.html" class="nav-link">LIÊN HỆ</a></li>
                         <li class="nav-item" id="user-actions"></li>
                     
                     </ul>
@@ -90,12 +90,12 @@
             <div class="container">
                 <div class="row sec-head">
                     <div class="col-4"><span>MÁY LẠNH TREO TƯỜNG</span></div>
-                    <div class="col-2"><a href="/html/may-lanh-treo-tuong.html">Xem tất cả <i class="fa-solid fa-angles-right"></i></a></div>
+                    <div class="col-2"><a href="../html/may-lanh-treo-tuong.html">Xem tất cả <i class="fa-solid fa-angles-right"></i></a></div>
                 </div>
                 <div class="sec-main">
                     <div class="row" id="section1">
                     </div>
-                    <div class="col-12 btn-section"><a href="/html/may-lanh-treo-tuong.html" class="btn">Xem tất cả</a></div>
+                    <div class="col-12 btn-section"><a href="../html/may-lanh-treo-tuong.html" class="btn">Xem tất cả</a></div>
                 </div>
             </div>
         </div>
@@ -104,11 +104,11 @@
             <div class="container">
                 <div class="row sec-head">
                     <div class="col-4"><span>MÁY LẠNH THƯƠNG MẠI</span></div>
-                    <div class="col-2"><a href="/html/may-lanh-thuong-mai.html">Xem tất cả <i class="fa-solid fa-angles-right"></i></a></div>
+                    <div class="col-2"><a href="../html/may-lanh-thuong-mai.html">Xem tất cả <i class="fa-solid fa-angles-right"></i></a></div>
                 </div>
                 <div class="sec-main">
                     <div class="row" id="section2"></div>
-                    <div class="col-12 btn-section"><a href="/html/may-lanh-thuong-mai.html" class="btn">Xem tất cả</a></div>
+                    <div class="col-12 btn-section"><a href="../html/may-lanh-thuong-mai.html" class="btn">Xem tất cả</a></div>
                 </div>
             </div>
         </div>
@@ -171,7 +171,7 @@
             console.log(section1Products)
             section1Products.forEach((product) => {
                 section1.innerHTML += `
-                    <a href="/html/san-pham.html?id=${product.id}" class="item col-3">
+                    <a href="../html/san-pham.html?id=${product.id}" class="item col-3">
                         <img src="${product.image}" alt="">
                         <p class="desc-item">${product.name}</p>
                         <span class="gia">${product.price.toLocaleString("vi-VN")}</span>
@@ -183,7 +183,7 @@
             let section2 = document.getElementById("section2");
             section2Products.forEach((product) => {
                 section2.innerHTML += `
-                    <a href="/html/san-pham.html?id=${product.id}" class="item col-3">
+                    <a href="../html/san-pham.html?id=${product.id}" class="item col-3">
                         <img src="${product.image}" alt="">
                         <p class="desc-item">${product.name}</p>
                         <span class="gia">${product.price}</span>
